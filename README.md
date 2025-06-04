@@ -1,7 +1,7 @@
 # Python Developer Portfolio – Rajesh Kumar
 
 Welcome to my Python Developer Portfolio!  
-This site showcases my journey from a seasoned UI developer to a passionate Python programmer, featuring projects, skills, and contact information.
+This site showcases my journey from a Senior UI developer to a passionate Python programmer, featuring projects, skills, and contact information.
 
 ## 👨‍💻 About Me
 
