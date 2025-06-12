@@ -102,11 +102,21 @@ button.resume:hover {
   box-shadow: 0 4px 16px rgba(233, 38, 42, 0.08);
 }
 
-.resume-link{
+.resume-link {
   display: flex;
   justify-content: center;
   gap: 24px;
   margin-top: 24px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bi {
+    font-size: 20px;
+  }
 }
 
 .body-content {
@@ -135,7 +145,7 @@ button.resume:hover {
       text-align: center;
     }
 
-    & + p {
+    &+p {
       margin-top: 16px;
     }
   }
@@ -152,6 +162,11 @@ button.resume:hover {
   }
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 h1 {
   font-size: 32px;
   margin-bottom: 24px;
@@ -160,17 +175,75 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
-  margin-bottom: 16px;
-  color: #e9262a;
+  font-size: 20px;
 }
 
 #about {
   text-align: center;
+
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding-block-start: 8px;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 16px;
+    border-radius: 4px;
+    scale: 1;
+    transition: 0.3s all;
+  }
+
+  .project-item {
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.06);
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 16px;
+    overflow: hidden;
+  }
+
+  a {
+    color: #000;
+
+    &:hover {
+      color: #e9262a;
+      opacity: 1;
+
+      img {
+        scale: 1.05;
+      }
+    }
+  }
+
+  .tech {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+
+    span {
+      background: #fff;
+      padding: 4px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #666;
+      box-shadow: 0 0 2px #999;
+    }
+  }
 }
 
 .project {
-  & + .project {
+  display: none;
+
+  &+.project {
     margin-top: 32px;
   }
 
@@ -218,16 +291,27 @@ h2 {
 }
 
 .contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
   padding-top: 16px;
+  margin-inline: auto;
+  gap: 24px;
+
+  @media screen and (min-width: 767px) {
+    grid-template-columns: repeat(2, max-content);
+  }
 
   a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: #007bff;
-    margin: 5px 0;
     text-decoration: none;
     transition: all 0.3s;
+
+    .bi {
+      color: #000;
+      font-size: 24px;
+    }
 
     &:hover {
       opacity: 0.6;
